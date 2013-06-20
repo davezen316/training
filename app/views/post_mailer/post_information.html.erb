@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi, <%= @user.username %></h1>
+    <p>
+      You have successfully make a new post,
+      the title is: <%= @post.title %>.<br/>
+    </p>
+    <p>
+      To login to the site, just follow this link: <%= post_url(@post) %>
+    </p>
+    <p>Thanks for posting and have a great day!</p>
+    <%= image_tag attachments["apple_logo.png"].url %>
+  </body>
+</html>

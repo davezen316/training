@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TrainingRails4</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+	
+<div id="templatemo_wrapper">
+
+	<div id="templatemo_header">
+        
+        <div id="templatemo_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="/users#index">User</a></li>
+                
+                <li><a href="/posts">Post</a></li>
+                <li><a href="/comments">Comment</a></li>
+                <% if user_signed_in? %>
+                <li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+                <% end %>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of templatemo_menu -->
+        <div class="cleaner"></div>
+    </div> <!-- end of templatemo header -->
+    
+    
+    <div id="templatemo_main">
+    	
+        <div class="col_w900">
+          	<p class="notice"><%= notice %></p>
+    		<p class="alert"><%= alert %></p>
+            <%= content_tag :h2, controller_name %>
+
+			<br>
+			<%= yield %>
+        </div>
+    
+    	<div class="col_w900  col_w900_last">
+            <img src="/images/templatemo_image_01.png" alt="Image 01" class="image_wrapper image_fl" />
+        </div>
+    </div> <!-- end of main -->
+</div> <!-- wrapper -->
+
+<div id="templatemo_footer_wrapper">
+
+	<div id="templatemo_footer">
+    	Copyright © 2013 <a href="http://train.icode-solution.com">i-Code Solution Sdn. Bhd.</a> | Designed by Dave
+        <div class="cleaner"></div>
+	</div>
+    
+</div>
+<script type="text/javascript" charset="utf-8" async defer>
+// msg();
+</script>
+</body>
+</html>
